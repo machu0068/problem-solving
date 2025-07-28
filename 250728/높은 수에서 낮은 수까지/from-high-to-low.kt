@@ -7,8 +7,10 @@ fun main() {
         val st = StringTokenizer(br.readLine())
         Pair(st.nextToken().toInt(), st.nextToken().toInt())
     }
-    val output = buildString {
-        append((b downTo a).joinToString(" "))
+    val range = when {
+        a > b -> (a downTo b)
+        else -> (b downTo a)
     }
+    val output = range.joinToString(" ")
     BufferedWriter(System.out.writer()).use { it.write(output) }
 }
