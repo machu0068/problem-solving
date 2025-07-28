@@ -7,7 +7,7 @@ fun main() {
         val st = StringTokenizer(br.readLine())
         Pair(st.nextToken().toInt(), st.nextToken().toInt())
     }
-    val output = when (a >= 0) {
+    val output = when (a > 0) {
         true -> buildString { repeat(b) { append(a.toString()) } }
         false -> "0"
     }
