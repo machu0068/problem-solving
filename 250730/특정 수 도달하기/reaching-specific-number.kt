@@ -8,7 +8,7 @@ fun main() {
         val output = Array(10) { st.nextToken().toInt() }
             .asSequence()
             .takeWhile { it < 250 }
-            .let { listOf(it.sum(), it.average().toString().format("%.1f")) }
+            .let { listOf(it.sum().toString(), "%.1f".format(it.average())) }
             .joinToString(" ")
         BufferedWriter(System.out.writer()).use { it.write(output) }
     }
