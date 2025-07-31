@@ -8,7 +8,7 @@ fun main() {
         st.nextToken().toInt() to st.nextToken().toInt()
     }
     val map = generateSequence(a / b to a % b) { it.first / b to it.first % b }
-        .takeWhile { !(it.first == 0 && it.second == 0) }
+        .takeWhile { !(it.first == 0 && it.second <= 1) }
         .map { it.second }
         .groupingBy { it }
         .eachCount()
