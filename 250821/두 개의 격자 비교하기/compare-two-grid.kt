@@ -17,7 +17,7 @@ fun main() {
     }
 
     val output = array1.zip(array2).joinToString("\n") { (row1, row2) ->
-        row1.zip(row2).map { (a, b) -> if (a == b) 0 else 1 }.joinToString(" ")
+        row1.zip(row2).joinToString(" ") { (a, b) -> if (a == b) "0" else "1" }
     }
 
     BufferedWriter(System.out.writer()).use { it.write(output) }
